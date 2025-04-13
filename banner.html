@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="현수막 시공 전문 기업 소개 사이트" />
+    <title>한맥기획</title>
+
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet" />
+
+    <!-- Scroll Animation -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- Alpine.js for modal -->
+    <script src="https://unpkg.com/alpinejs" defer></script>
+
+    <!-- Animate on Scroll -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+    <script>
+      function portfolio() {
+        return {
+          open: false,
+          image: '',
+          openModal(i) {
+            this.image = `https://via.placeholder.com/800x600?text=그림${i}`;
+            this.open = true;
+          },
+          closeModal() {
+            this.open = false;
+          }
+        };
+      }
+      
+    </script>
+
+<script>
+  AOS.init({
+    once: true,
+    duration: 800,
+    easing: 'ease-in-out'
+  });
+</script>
+
+    
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: 'Noto Sans KR', sans-serif;
+      }
+      .gold {
+        color: #d4af37;
+      }
+      .floating-buttons {
+        position: fixed;
+        top: 75%;
+        right: 1rem;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        z-index: 1000;
+      }
+      .floating-button {
+        width: 3.5rem;
+        height: 3.5rem;
+        background-color: #d4af37;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      }
+      .floating-button:hover {
+        transform: scale(1.2);
+        background-color: #bfa233;
+      }
+      nav a {
+        position: relative;
+      }
+      nav a::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: #d4af37;
+        transition: width 0.3s ease-in-out;
+      }
+      nav a:hover::after {
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-100 text-gray-800">
+    <!-- 상단 내비게이션 -->
+    <header class="bg-white shadow fixed w-full top-0 z-50" data-aos="fade-down">
+      <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+        <h1 class="text-xl font-bold text-gray-800 ml-4">한맥기획</h1>
+        <nav class="space-x-4">
+          <a href="#about" class="text-gray-600 hover:text-gray-900">회사 소개</a>
+          <a href="#services" class="text-gray-600 hover:text-gray-900">서비스</a>
+          <a href="#process" class="text-gray-600 hover:text-gray-900">시공 절차</a>
+          <a href="#portfolio" class="text-gray-600 hover:text-gray-900">포트폴리오</a>
+          <a href="#testimonials" class="text-gray-600 hover:text-gray-900">고객 후기</a>
+          <a href="#contact" class="text-gray-600 hover:text-gray-900">문의하기</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="pt-24">
+
+ <!-- Hero Section with Background Video -->
+<section class="relative h-screen w-full overflow-hidden">
+  <!-- Video Background -->
+  <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0">
+    <source src= "video.mp4" type="video/mp4" />
+    브라우저가 비디오 태그를 지원하지 않습니다.
+  </video>
+ 
+  <!-- Overlay Content -->
+  <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center z-10">
+    <div class="text-center text-white px-4" data-aos="fade-in">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4">한맥기획</h1>
+      <p class="text-lg md:text-2xl">현수막 시공 전문업체</p>
+    </div>
+  </div>
+</section>
+
+
+    <!-- 이하 동일 -->
+ <!-- 회사 소개 -->
+ <section id="about" class="py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-6">회사 소개</h2>
+      <p class="text-gray-600 mb-4">2005년 설립 이래 수천 건의 시공 경험을 바탕으로, 최고의 품질과 서비스를 제공합니다.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+        <div class="shadow rounded-xl p-6 bg-gray-50">
+          <h3 class="text-xl font-semibold mb-2">설립연도</h3>
+          <p>2005년</p>
+        </div>
+        <div class="shadow rounded-xl p-6 bg-gray-50">
+          <h3 class="text-xl font-semibold mb-2">시공 건수</h3>
+          <p>5,000건 이상</p>
+        </div>
+        <div class="shadow rounded-xl p-6 bg-gray-50">
+          <h3 class="text-xl font-semibold mb-2">전문 인력</h3>
+          <p>15명</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- 서비스 소개 -->
+  <section id="services" class="py-20 bg-gray-100">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">서비스</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded shadow text-center">
+          <img src="https://via.placeholder.com/100x100" alt="그림1" class="mx-auto mb-4" />
+          <h3 class="text-xl font-semibold mb-2">실외 현수막</h3>
+          <p class="text-gray-500">옥외광고, 행사용 외부 시공</p>
+        </div>
+        <div class="bg-white p-6 rounded shadow text-center">
+          <img src="https://via.placeholder.com/100x100" alt="그림2" class="mx-auto mb-4" />
+          <h3 class="text-xl font-semibold mb-2">실내 행사</h3>
+          <p class="text-gray-500">세미나, 전시회, 기업 내부용</p>
+        </div>
+        <div class="bg-white p-6 rounded shadow text-center">
+          <img src="https://via.placeholder.com/100x100" alt="그림3" class="mx-auto mb-4" />
+          <h3 class="text-xl font-semibold mb-2">현장 맞춤 시공</h3>
+          <p class="text-gray-500">공간과 목적에 따른 맞춤 제작</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- 스카이차 소개 섹션 -->
+<section class="py-20 bg-white text-center" data-aos="fade-up">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-6">스카이차 보유로 더 다양한 작업 가능</h2>
+      <p class="text-lg text-gray-700 mb-6">
+        한맥기획은 자체 스카이차 장비를 보유하고 있어 고소 작업이 필요한 다양한 현장에서 더욱 유연하고 안전하게 시공 작업을 수행할 수 있습니다.
+        이는 외부 장비 대여에 따른 시간 지연과 비용을 줄여, 고객에게 더 합리적인 가격과 신속한 서비스를 제공합니다.
+      </p>
+      <img src="https://via.placeholder.com/800x400?text=스카이차+작업+사진" alt="스카이차 작업 사진" class="mx-auto rounded shadow" />
+    </div>
+  </section>
+  
+  <!-- 시공 절차 안내 -->
+  <section id="process" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">시공 절차 안내</h2>
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-6 text-center">
+        <div class="bg-gray-100 p-6 rounded-lg shadow">
+          <div class="text-4xl font-bold gold mb-2">01</div>
+          <h3 class="text-lg font-semibold mb-2">상담 접수</h3>
+          <p class="text-gray-600">전화 또는 온라인 문의</p>
+        </div>
+        <div class="bg-gray-100 p-6 rounded-lg shadow">
+          <div class="text-4xl font-bold gold mb-2">02</div>
+          <h3 class="text-lg font-semibold mb-2">현장 확인</h3>
+          <p class="text-gray-600">담당자가 방문하여 측정</p>
+        </div>
+        <div class="bg-gray-100 p-6 rounded-lg shadow">
+          <div class="text-4xl font-bold gold mb-2">03</div>
+          <h3 class="text-lg font-semibold mb-2">디자인 제작</h3>
+          <p class="text-gray-600">목적에 맞는 시안 제공</p>
+        </div>
+        <div class="bg-gray-100 p-6 rounded-lg shadow">
+          <div class="text-4xl font-bold gold mb-2">04</div>
+          <h3 class="text-lg font-semibold mb-2">제작 및 출력</h3>
+          <p class="text-gray-600">고급 장비로 출력 진행</p>
+        </div>
+        <div class="bg-gray-100 p-6 rounded-lg shadow">
+          <div class="text-4xl font-bold gold mb-2">05</div>
+          <h3 class="text-lg font-semibold mb-2">시공 완료</h3>
+          <p class="text-gray-600">현장에 맞춰 깔끔하게 시공</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- 포트폴리오 섹션 -->
+  <section id="portfolio" class="py-20 bg-gray-100">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">시공 포트폴리오</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <template x-data="portfolio()">
+          <template x-for="i in 6" :key="i">
+            <div>
+              <img :src="'https://via.placeholder.com/400x300?text=그림'+i" @click="openModal(i)" class="cursor-pointer rounded shadow" alt="포트폴리오 이미지" />
+            </div>
+          </template>
+  
+          <!-- 모달 -->
+          <div x-show="open" @click.away="closeModal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50" x-cloak>
+            <div class="bg-white rounded shadow-lg p-4 max-w-3xl w-full">
+              <img :src="image" alt="확대 이미지" class="w-full h-auto" />
+              <button @click="closeModal" class="mt-4 bg-gray-800 text-white px-4 py-2 rounded">닫기</button>
+            </div>
+          </div>
+        </template>
+      </div>
+    </div>
+  </section>
+  
+  <!-- 고객 후기 섹션 -->
+  <section id="testimonials" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-12">고객 후기</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-gray-100 p-6 rounded shadow">
+          <p class="text-gray-600 italic mb-4">“작업이 정말 깔끔했고, 현장에서도 친절하게 응대해주셔서 감사했습니다.”</p>
+          <h4 class="font-semibold">김OO 고객</h4>
+        </div>
+        <div class="bg-gray-100 p-6 rounded shadow">
+          <p class="text-gray-600 italic mb-4">“디자인부터 설치까지 전반적으로 만족도가 높았습니다. 재이용 의사 있습니다.”</p>
+          <h4 class="font-semibold">이OO 고객</h4>
+        </div>
+        <div class="bg-gray-100 p-6 rounded shadow">
+          <p class="text-gray-600 italic mb-4">“빠른 시공과 합리적인 가격, 추천드립니다!”</p>
+          <h4 class="font-semibold">박OO 고객</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 문의 섹션 -->
+<section id="contact" class="py-20 bg-gray-100" data-aos="fade-up">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-8">문의하기</h2>
+      <form class="space-y-6">
+        <input type="text" placeholder="이름" class="w-full p-3 border border-gray-300 rounded" />
+        <input type="email" placeholder="이메일" class="w-full p-3 border border-gray-300 rounded" />
+        <textarea placeholder="문의 내용" rows="5" class="w-full p-3 border border-gray-300 rounded"></textarea>
+        <button type="submit" class="bg-gray-800 text-white px-6 py-3 rounded hover:bg-gray-700">보내기</button>
+      </form>
+      <p class="text-sm text-gray-500 mt-6">전화: 02-123-4567 | 이메일: gkalscjf463@gmail.com</p>
+    </div>
+  </section>
+
+  <!-- 푸터 -->
+<footer class="bg-gray-900 text-white py-10 relative">
+    <div class="max-w-6xl mx-auto px-4 text-center space-y-4">
+      <p class="text-sm">&copy; 2025 한맥기획. 모든 권리 보유.</p>
+  
+      <div class="text-sm text-gray-400 space-y-1">
+        <p>
+          주소:
+          <a href="https://map.naver.com/v5/search/서울특별시%20강남구%20테헤란로%20123" target="_blank" class="hover:text-white underline">
+            서울특별시 강남구 테헤란로 123, 5층
+          </a>
+        </p>
+        <p>사업자등록번호: 123-45-67890</p>
+        <p>대표: 홍길동</p>
+        <p>전화: 02-123-4567 | 이메일: info@hanmacplan.co.kr</p>
+      </div>
+  
+      <div class="flex justify-center space-x-6 pt-2">
+        <a href="#" class="text-gray-400 hover:text-white transition">Facebook</a>
+        <a href="#" class="text-gray-400 hover:text-white transition">Instagram</a>
+        <a href="#" class="text-gray-400 hover:text-white transition">YouTube</a>
+      </div>
+    </div>
+  
+    <!-- 네이버 지도 삽입 (선택 사항) -->
+    <!-- 지도 삽입 원할 경우 아래 주석 해제 후 CLIENT ID 입력 -->
+    <!--
+    <div id="naver-map" class="w-full h-64 mt-8"></div>
+    <script src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=YOUR_CLIENT_ID"></script>
+    <script>
+      var map = new naver.maps.Map('naver-map', {
+        center: new naver.maps.LatLng(37.498095, 127.027610),
+        zoom: 16
+      });
+  
+      var marker = new naver.maps.Marker({
+        position: new naver.maps.LatLng(37.498095, 127.027610),
+        map: map,
+        title: '한맥기획'
+      });
+    </script>
+    -->
+  </footer>
+  
+  
+  <!-- 고정 동그란 버튼들 -->
+<div class="floating-buttons">
+    <!-- 전화 -->
+    <a href="tel:01068777637" class="floating-button">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15 .621 0 1.132-.488 1.172-1.109a.75.75 0 00-.495-.76l-3.014-1.128a.75.75 0 00-.822.174l-.888.888a12.057 12.057 0 01-5.303-5.303l.888-.888a.75.75 0 00.174-.822L5.869 4.323a.75.75 0 00-.76-.495c-.62.04-1.109.551-1.109 1.172z" />
+      </svg>
+    </a>
+  
+    <!-- 문자 -->
+    <a href="sms:01068777637" class="floating-button">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h5m-6 8h10a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+      </svg>
+    </a>
+  
+    <!-- 맨 위로 -->
+    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="floating-button">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+      </svg>
+    </button>
+  </div>
+
+    <script>
+      AOS.init({
+        duration: 800,
+        once: true,
+      });
+
+      ScrollReveal().reveal('section', {
+        delay: 100,
+        duration: 1000,
+        distance: '50px',
+        origin: 'bottom',
+        easing: 'ease-out'
+      });
+
+      function portfolio() {
+        return {
+          open: false,
+          image: '',
+          openModal(i) {
+            this.image = `https://via.placeholder.com/800x600?text=그림${i}`;
+            this.open = true;
+          },
+          closeModal() {
+            this.open = false;
+            this.image = '';
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
